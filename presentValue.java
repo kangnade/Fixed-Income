@@ -3,6 +3,20 @@ import java.util.*;
 public class presentValue {
     // This is the class that calculates various present values
     // for given cash flows
+    
+    public static double perpetuityPV(double cashFlow, double interest){
+        // The PV of a perpetuity, such as the UK Consols, is given by the
+        // formula: PV = CF/i, given i != 0
+        // Since this formula is a lot easier compared with the others, I will
+        // not illustrate it with a test example below.
+        
+        if(interest == 0){
+            throw new IllegalArgumentException("The interest rate cannot be 0");
+        }else{
+            return cashFlow/interest;
+        }
+    }
+    
     public static double annualPV(double n, double cashFlow, double interest){
         if(interest == 0){
             throw new IllegalArgumentException("The interest rate cannot be 0 because it is the denominator");
